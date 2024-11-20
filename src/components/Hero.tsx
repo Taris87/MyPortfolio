@@ -1,6 +1,6 @@
-import React from 'react';
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
-import { useLanguage } from '../context/LanguageContext';
+import React from "react";
+import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -8,8 +8,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative pt-20 min-h-screen flex items-center bg-gradient-to-br from-primary/5 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200"
-    >
+      className="relative pt-20 min-h-screen flex items-center bg-gradient-to-br from-primary/5 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center relative">
           {/* SVG Blob als Hintergrund */}
@@ -17,8 +16,7 @@ const Hero = () => {
             <svg
               viewBox="0 0 500 500"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-[440px] h-[440px]"
-            >
+              className="w-full h-full">
               <path fill="#12f7ff">
                 <animate
                   attributeName="d"
@@ -34,57 +32,51 @@ M420,291Q448,250,446,194Q444,138,401.5,99.5Q359,61,304.5,52Q250,43,191.5,45.5Q13
 M404,290Q420,250,403.5,210.5Q387,171,380.5,103.5Q374,36,312,20Q250,4,199,39Q148,74,100.5,105Q53,136,29.5,193Q6,250,54.5,292.5Q103,335,118.5,393Q134,451,192,440Q250,429,311.5,446Q373,463,380.5,396.5Q388,330,404,290Z;
 M458,311.5Q452,250,448.5,193.5Q445,137,389,122Q333,107,291.5,86.5Q250,66,207.5,84.5Q165,103,114,122.5Q63,142,80.5,196Q98,250,78,305.5Q58,361,99,401Q140,441,195,458.5Q250,476,301,451.5Q352,427,408,400Q464,373,458,311.5Z;
 
-                  "
-                ></animate>
+                  "></animate>
               </path>
             </svg>
           </div>
 
-          {/* Profilbild */}
+          {/* Profile Image */}
           <div className="relative flex justify-center items-center mb-8">
             <img
-              src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?q=80&w=200&h=200"
+              src="/src/image/IMG_20200831_023451_096.jpg"
               alt="Profile"
               className="w-32 h-32 rounded-full mx-auto border-4 border-primary"
             />
           </div>
 
-          {/* Titel und Beschreibung */}
+          {/* Title and Discription */}
           <h1
             className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
-            style={{ mixBlendMode: 'saturation' }}
-          >
-            {t('softwareDeveloper')}
+            style={{ mixBlendMode: "saturation" }}>
+            {t("welcome")}
           </h1>
           <p
             className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
-            style={{ mixBlendMode: 'saturation' }}
-          >
-            {t('fullstackDev')}
+            style={{ mixBlendMode: "saturation" }}>
+            {t("intro")}
           </p>
 
           {/* Soziale Links */}
           <div className="flex justify-center space-x-6 mb-12">
             <a
-              href="https://github.com"
+              href="https://github.com/Taris87"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
+              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <Github className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/steven-cleveland-9440a6269"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
+              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary" />
             </a>
             <a
-              href="mailto:kontakt@example.com"
-              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
-            >
+              href="mailto:steven_cleveland41@yahoo.com"
+              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
               <Mail className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary" />
             </a>
           </div>
@@ -93,8 +85,7 @@ M458,311.5Q452,250,448.5,193.5Q445,137,389,122Q333,107,291.5,86.5Q250,66,207.5,8
           <a
             href="#services"
             className="inline-block animate-bounce"
-            style={{ mixBlendMode: 'saturation' }}
-          >
+            style={{ mixBlendMode: "saturation" }}>
             <ChevronDown className="w-8 h-8 text-primary" />
           </a>
         </div>

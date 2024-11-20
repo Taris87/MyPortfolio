@@ -20,12 +20,12 @@ const Skills = () => {
   const { t } = useLanguage();
   
   const skills = [
-    { name: "JavaScript/TypeScript", level: 90 },
-    { name: "React/React Native", level: 85 },
-    { name: "Node.js", level: 80 },
-    { name: "HTML/CSS", level: 95 },
-    { name: "SQL/NoSQL", level: 75 },
-    { name: "AWS/Cloud", level: 70 }
+    { name: "JavaScript/TypeScript", level: 70 },
+    { name: "React/React Native", level: 65 },
+    { name: "Node.js", level: 50 },
+    { name: "HTML/CSS", level: 75 },
+    { name: "SQL/NoSQL", level: 65 },
+    { name: "AWS/Cloud", level: 40 }
   ];
 
   return (
