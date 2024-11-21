@@ -77,7 +77,7 @@ const Portfolio = () => {
     },
     {
       title: "Vocabulary App",
-      description: "Mobile-First Fitness App mit Fortschrittsverfolgung",
+      description: t("projectVocabulary"),
       image: "/src/image/child-8560775_640.jpg",
       tags: ["CSS", "HTML", "JavaScript"],
       githubLink: "https://github.com/Taris87/VocabularyTrainer",

@@ -29,6 +29,7 @@ export const translations = {
     allRightsReserved: 'All Rights Reserved',
     projectEcommerce: 'Complete E-Commerce Solution with React, Node.js, and MongoDB',
     projectDashboard: 'Dynamic Dashboard for Data Visualization and Real-Time Analytics',
+    projectVocabulary: 'Master Your Vocabulary',
   },
   de: {
     home: 'Home',
@@ -60,5 +61,6 @@ export const translations = {
     allRightsReserved: 'Alle Rechte vorbehalten',
     projectEcommerce: 'Vollständige E-Commerce-Lösung mit React, Node.js und MongoDB',
     projectDashboard: 'Dynamisches Dashboard für Datenvisualisierung und Echtzeitanalysen',
+    projectVocabulary: 'Meistere deinen Wortschatz',
   },
 };
