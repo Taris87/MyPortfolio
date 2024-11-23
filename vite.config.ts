@@ -7,6 +7,12 @@ export default defineConfig({
   base: "/MyPortfolio/",
   build: {
     outDir: "dist",
+    assetsDir: "assets",
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
   },
   optimizeDeps: {
     exclude: ["lucide-react"],
