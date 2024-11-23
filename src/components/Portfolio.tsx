@@ -1,6 +1,9 @@
 import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import ecommerceImage from "../image/online-sales-2108028_640.jpg";
+import dashboardImage from "../image/ai-generated-8615473_640.png";
+import vocabularyImage from "../image/child-8560775_640.jpg";
 
 const ProjectCard = ({
   title,
@@ -28,7 +31,8 @@ const ProjectCard = ({
         {tags.map((tag, index) => (
           <span
             key={index}
-            className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-full text-sm">
+            className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 rounded-full text-sm"
+          >
             {tag}
           </span>
         ))}
@@ -38,7 +42,8 @@ const ProjectCard = ({
           href={githubLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+        >
           <Github className="w-5 h-5 mr-2" />
           Code
         </a>
@@ -46,7 +51,8 @@ const ProjectCard = ({
           href={liveLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+          className="flex items-center text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+        >
           <ExternalLink className="w-5 h-5 mr-2" />
           Live Demo
         </a>
@@ -62,7 +68,7 @@ const Portfolio = () => {
     {
       title: "E-Commerce Platform",
       description: t("projectEcommerce"),
-      image: "/src/image/online-sales-2108028_640.jpg",
+      image: ecommerceImage,
       tags: ["React", "Node.js", "MongoDB", "Express"],
       githubLink: "https://github.com",
       liveLink: "https://example.com",
@@ -70,7 +76,7 @@ const Portfolio = () => {
     {
       title: "Dashboard App",
       description: t("projectDashboard"),
-      image: "/src/image/ai-generated-8615473_640.png",
+      image: dashboardImage,
       tags: ["TypeScript", "React", "Firebase", "TailwindCSS"],
       githubLink: "https://github.com",
       liveLink: "https://example.com",
@@ -78,7 +84,7 @@ const Portfolio = () => {
     {
       title: "Vocabulary App",
       description: t("projectVocabulary"),
-      image: "/src/image/child-8560775_640.jpg",
+      image: vocabularyImage,
       tags: ["CSS", "HTML", "JavaScript"],
       githubLink: "https://github.com/Taris87/VocabularyTrainer",
       liveLink: "https://taris87.github.io/VocabularyTrainer/Vokabel-Trainer/",
@@ -88,7 +94,8 @@ const Portfolio = () => {
   return (
     <section
       id="portfolio"
-      className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200">
+      className="py-20 bg-white dark:bg-gray-800 transition-colors duration-200"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">

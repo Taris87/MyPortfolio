@@ -1,93 +1,153 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
+import { CanvasAnimation } from '../features/canvas/canvasAnimation';
+import { useTheme } from "next-themes";
+import { useTypewriter } from "../features/typing/typingAnimation";
+import profileImage from "../image/IMG_20200831_023451_096.jpg";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const { resolvedTheme } = useTheme();
+  const { displayText } = useTypewriter();
+
+  useEffect(() => {
+    const canvas = document.getElementById('particle-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const canvasAnimation = new CanvasAnimation(canvas, resolvedTheme === 'dark');
+    canvasAnimation.startAnimation();
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      canvasAnimation.stopAnimation();
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [resolvedTheme]);
 
   return (
     <section
       id="home"
-      className="relative pt-20 min-h-screen flex items-center bg-gradient-to-br from-primary/5 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-200">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center relative">
-          {/* SVG Blob als Hintergrund */}
-          <div className="absolute inset-0 flex justify-center items-center -z-10">
-            <svg
-              viewBox="0 0 500 500"
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-full h-full">
-              <path fill="#12f7ff">
-                <animate
-                  attributeName="d"
-                  dur="20000ms"
-                  repeatCount="indefinite"
-                  values="
-                    M458,311.5Q464,373,408,400Q352,427,301,451.5Q250,476,195,458.5Q140,441,99,401Q58,361,78,305.5Q98,250,80.5,196Q63,142,114,122.5Q165,103,207.5,84.5Q250,66,291.5,86.5Q333,107,389,122Q445,137,448.5,193.5Q452,250,458,311.5Z;
-                    M404,290Q388,330,380.5,396.5Q373,463,311.5,446Q250,429,192,440Q134,451,118.5,393Q103,335,54.5,292.5Q6,250,29.5,193Q53,136,100.5,105Q148,74,199,39Q250,4,312,20Q374,36,380.5,103.5Q387,171,403.5,210.5Q420,250,404,290Z;
-                    M420,291Q392,332,375.5,385Q359,438,304.5,463Q250,488,210,438.5Q170,389,131.5,365Q93,341,81,295.5Q69,250,80.5,204.5Q92,159,112.5,103.5Q133,48,191.5,45.5Q250,43,304.5,52Q359,61,401.5,99.5Q444,138,446,194Q448,250,420,291Z;
-                    M438,295.5Q408,341,375.5,375.5Q343,410,296.5,455Q250,500,187.5,483Q125,466,102.5,407Q80,348,44.5,299Q9,250,33,194.5Q57,139,110,119.5Q163,100,206.5,67Q250,34,290.5,72Q331,110,393.5,120.5Q456,131,462,190.5Q468,250,438,295.5Z;
-                    M438,295.5Q468,250,462,190.5Q456,131,393.5,120.5Q331,110,290.5,72Q250,34,206.5,67Q163,100,110,119.5Q57,139,33,194.5Q9,250,44.5,299Q80,348,102.5,407Q125,466,187.5,483Q250,500,296.5,455Q343,410,375.5,375.5Q408,341,438,295.5Z;
-M420,291Q448,250,446,194Q444,138,401.5,99.5Q359,61,304.5,52Q250,43,191.5,45.5Q133,48,112.5,103.5Q92,159,80.5,204.5Q69,250,81,295.5Q93,341,131.5,365Q170,389,210,438.5Q250,488,304.5,463Q359,438,375.5,385Q392,332,420,291Z;
-M404,290Q420,250,403.5,210.5Q387,171,380.5,103.5Q374,36,312,20Q250,4,199,39Q148,74,100.5,105Q53,136,29.5,193Q6,250,54.5,292.5Q103,335,118.5,393Q134,451,192,440Q250,429,311.5,446Q373,463,380.5,396.5Q388,330,404,290Z;
-M458,311.5Q452,250,448.5,193.5Q445,137,389,122Q333,107,291.5,86.5Q250,66,207.5,84.5Q165,103,114,122.5Q63,142,80.5,196Q98,250,78,305.5Q58,361,99,401Q140,441,195,458.5Q250,476,301,451.5Q352,427,408,400Q464,373,458,311.5Z;
+      className="relative pt-20 min-h-screen flex items-center bg-gradient-to-br from-primary-light to-[#b0d7d7] dark:from-gray-950 dark:via-gray-900 dark:to-black overflow-hidden">
+      {/* Particle Canvas */}
+      <canvas id="particle-canvas" className="absolute inset-0 pointer-events-none" />
 
-                  "></animate>
-              </path>
-            </svg>
+      {/* Glass Cards Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute w-96 h-96 bg-primary/10 rounded-full filter blur-[100px] -top-20 -left-20 animate-pulse-slow" />
+        <div className="absolute w-96 h-96 bg-violet-600/10 rounded-full filter blur-[100px] -bottom-20 -right-20 animate-pulse-slow" />
+      </div>
+
+      <div className="relative z-10 container mx-auto px-4">
+        {/* Centered Welcome Heading */}
+        <div className="text-center -mt-8 mb-44">
+          <div className="relative inline-block">
+            {/* Blob Animation */}
+            <div className="absolute inset-0 -z-10 flex items-center justify-center w-full">
+              <div className="absolute w-[120%] h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-70"></div>
+              <div className="absolute w-[120%] h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-70 translate-y-2"></div>
+              <div className="absolute w-[120%] h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-70 -translate-y-2"></div>
+            </div>
+            
+            <h1 className="text-6xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
+              {t("welcome")}
+            </h1>
+          </div>
+        </div>
+
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Left Side - Profile Image */}
+            <div className="w-full md:w-1/2 flex flex-col items-center">
+              <div className="relative group w-72 h-72">
+                {/* Animated Glow Effect */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-violet-600 to-primary blur-lg opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse-slow"></div>
+                
+                {/* Border Container */}
+                <div className="absolute inset-0 rounded-full border-4 border-primary"></div>
+                
+                {/* Image Container */}
+                <div className="absolute inset-1 bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900 rounded-full p-1">
+                  <img 
+                    src={profileImage}
+                    alt="Profile" 
+                    className="rounded-full w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex justify-center gap-8 mt-8">
+                <a
+                  href="https://github.com/Taris87"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
+                >
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-violet-600/20 blur opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></div>
+                  <Github className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors relative z-10" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/steven-cleveland-9440a6269"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
+                >
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-violet-600/20 blur opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></div>
+                  <Linkedin className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors relative z-10" />
+                </a>
+                <a
+                  href="mailto:steven_cleveland41@yahoo.com"
+                  className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
+                >
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-violet-600/20 blur opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
+                  <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></div>
+                  <Mail className="w-6 h-6 text-gray-600 dark:text-gray-300 group-hover:text-primary dark:group-hover:text-primary transition-colors relative z-10" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right Side - Text Content */}
+            <div className="w-full md:w-1/2">
+              <div className="bg-gray-800/30 dark:bg-gray-800/30 backdrop-blur-xl rounded-3xl p-8 shadow-1xl relative before:absolute before:inset-0 before:-z-10 before:translate-x-2 before:translate-y-2 before:bg-primary/10 before:rounded-3xl before:blur-lg after:absolute after:inset-0 after:-z-20 after:translate-x-4 after:translate-y-4 after:bg-violet-600/10 after:rounded-3xl after:blur-xl">
+                <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-600 mb-6 flex flex-wrap items-center">
+                  <span className="mr-2">{t("iam")}</span>
+                  <div className="min-w-[280px]">
+                    <span className="text-primary dark:text-primary border-r-2 dark:border-primary animate-blink">
+                      {displayText}
+                    </span>
+                  </div>
+                </h2>
+                <p className="text-lg text-white font-bold dark:text-gray-300 leading-relaxed">
+                  {t("intro")}
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Profile Image */}
-          <div className="relative flex justify-center items-center mb-8">
-            <img
-              src="/src/image/IMG_20200831_023451_096.jpg"
-              alt="Profile"
-              className="w-32 h-32 rounded-full mx-auto border-4 border-primary"
-            />
-          </div>
-
-          {/* Title and Discription */}
-          <h1
-            className="text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
-            style={{ mixBlendMode: "saturation" }}>
-            {t("welcome")}
-          </h1>
-          <p
-            className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
-            style={{ mixBlendMode: "saturation" }}>
-            {t("intro")}
-          </p>
-
-          {/* Soziale Links */}
-          <div className="flex justify-center space-x-6 mb-12">
-            <a
-              href="https://github.com/Taris87"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              <Github className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/steven-cleveland-9440a6269"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              <Linkedin className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary" />
-            </a>
-            <a
-              href="mailto:steven_cleveland41@yahoo.com"
-              className="p-3 bg-white dark:bg-gray-700 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
-              <Mail className="w-6 h-6 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-primary" />
-            </a>
-          </div>
-
-          {/* Chevron */}
-          <a
-            href="#services"
-            className="inline-block animate-bounce"
-            style={{ mixBlendMode: "saturation" }}>
-            <ChevronDown className="w-8 h-8 text-primary" />
-          </a>
+          {/* Scroll Down Indicator */}
+          <button 
+            onClick={() => {
+              document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-glow"
+            aria-label="Scroll to services"
+          >
+            <div className="relative">
+              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0 animate-scroll-arrow-1" />
+              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0 animate-scroll-arrow-2" />
+            </div>
+          </button>
         </div>
       </div>
     </section>

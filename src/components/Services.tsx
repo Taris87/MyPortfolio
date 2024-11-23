@@ -2,7 +2,7 @@ import React from 'react';
 import { Code2, Layout, Database, Cloud } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
-const ServiceCard = ({ icon: Icon, title, description }: { icon: any, title: string, description: string }) => (
+const ServiceCard = ({ icon: Icon, title, description }: { icon: React.ComponentType<{ className?: string }>, title: string, description: string }) => (
   <div className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300">
     <div className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/50 rounded-lg flex items-center justify-center mb-4">
       <Icon className="w-8 h-8 text-indigo-600 dark:text-indigo-400" />
