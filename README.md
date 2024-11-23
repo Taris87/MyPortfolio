@@ -7,7 +7,11 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - 🎨 Modern and responsive design
 - 🌙 Dark/Light mode support
 - 🌐 Multi-language support (English/German)
-- 📱 Mobile-friendly interface
+- 📱 Mobile-optimized interface with:
+  - Responsive typography and spacing
+  - Touch-friendly navigation
+  - Optimized animations for mobile devices
+  - Adaptive layout for different screen sizes
 - ⚡ Fast loading and optimized performance
 - 🎯 SEO friendly
 

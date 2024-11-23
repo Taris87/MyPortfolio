@@ -36,7 +36,8 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative pt-20 min-h-screen flex items-center bg-gradient-to-br from-primary-light to-[#b0d7d7] dark:from-gray-950 dark:via-gray-900 dark:to-black overflow-hidden">
+      className="relative pt-16 sm:pt-20 min-h-screen flex items-center bg-gradient-to-br from-primary-light to-[#b0d7d7] dark:from-gray-950 dark:via-gray-900 dark:to-black overflow-hidden"
+    >
       {/* Particle Canvas */}
       <canvas id="particle-canvas" className="absolute inset-0 pointer-events-none" />
 
@@ -48,26 +49,26 @@ const Hero = () => {
 
       <div className="relative z-10 container mx-auto px-4">
         {/* Centered Welcome Heading */}
-        <div className="text-center -mt-8 mb-44">
+        <div className="text-center -mt-4 sm:-mt-8 mb-20 sm:mb-44">
           <div className="relative inline-block">
             {/* Blob Animation */}
             <div className="absolute inset-0 -z-10 flex items-center justify-center w-full">
-              <div className="absolute w-[120%] h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-70"></div>
-              <div className="absolute w-[120%] h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-70 translate-y-2"></div>
-              <div className="absolute w-[120%] h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-70 -translate-y-2"></div>
+              <div className="absolute w-[120%] h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-70"></div>
+              <div className="absolute w-[120%] h-16 sm:h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-70 translate-y-2"></div>
+              <div className="absolute w-[120%] h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-70 -translate-y-2"></div>
             </div>
             
-            <h1 className="text-6xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
+            <h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
               {t("welcome")}
             </h1>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
             {/* Left Side - Profile Image */}
             <div className="w-full md:w-1/2 flex flex-col items-center">
-              <div className="relative group w-72 h-72">
+              <div className="relative group w-56 h-56 sm:w-72 sm:h-72">
                 {/* Animated Glow Effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-violet-600 to-primary blur-lg opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse-slow"></div>
                 
@@ -85,7 +86,7 @@ const Hero = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex justify-center gap-8 mt-8">
+              <div className="flex justify-center gap-6 sm:gap-8 mt-6 sm:mt-8">
                 <a
                   href="https://github.com/Taris87"
                   target="_blank"
@@ -118,9 +119,9 @@ const Hero = () => {
             </div>
 
             {/* Right Side - Text Content */}
-            <div className="w-full md:w-1/2">
-              <div className="bg-gray-800/30 dark:bg-gray-800/30 backdrop-blur-xl rounded-3xl p-8 shadow-1xl relative before:absolute before:inset-0 before:-z-10 before:translate-x-2 before:translate-y-2 before:bg-primary/10 before:rounded-3xl before:blur-lg after:absolute after:inset-0 after:-z-20 after:translate-x-4 after:translate-y-4 after:bg-violet-600/10 after:rounded-3xl after:blur-xl">
-                <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-600 mb-6 flex flex-wrap items-center">
+            <div className="w-full md:w-1/2 mt-8 md:mt-0">
+              <div className="bg-gray-800/30 dark:bg-gray-800/30 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-1xl relative before:absolute before:inset-0 before:-z-10 before:translate-x-2 before:translate-y-2 before:bg-primary/10 before:rounded-2xl sm:before:rounded-3xl before:blur-lg after:absolute after:inset-0 after:-z-20 after:translate-x-4 after:translate-y-4 after:bg-violet-600/10 after:rounded-2xl sm:after:rounded-3xl after:blur-xl">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-violet-600 mb-4">
                   <span className="mr-2">{t("iam")}</span>
                   <div className="min-w-[280px]">
                     <span className="text-primary dark:text-primary border-r-2 dark:border-primary animate-blink">
