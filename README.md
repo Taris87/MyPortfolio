@@ -9,9 +9,17 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - 🌐 Multi-language support (English/German)
 - 📱 Mobile-optimized interface with:
   - Responsive typography and spacing
-  - Touch-friendly navigation
+  - Smart mobile navigation with:
+    - Animated menu transitions
+    - Click-outside closing
+    - Visual feedback for visited sections
   - Optimized animations for mobile devices
   - Adaptive layout for different screen sizes
+- 💎 Enhanced UI elements:
+  - Glass morphism effects
+  - Smooth animations and transitions
+  - Interactive hover states
+  - Elegant card designs
 - ⚡ Fast loading and optimized performance
 - 🎯 SEO friendly
 
@@ -22,6 +30,8 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Vite](https://vitejs.dev/) - Next generation frontend tooling
 - [Lucide Icons](https://lucide.dev/) - Beautiful icons
+- [next-themes](https://github.com/pacocoursey/next-themes) - Theme management
+- [i18next](https://www.i18next.com/) - Internationalization framework
 
 ## 🚀 Getting Started
 
@@ -66,13 +76,33 @@ npm run build
 ```
 MyPortfolio/
 ├── src/
-│   ├── components/      # React components
-│   ├── context/        # React context providers
-│   ├── image/          # Image assets
-│   └── translations.ts  # Language translations
-├── public/             # Static files
-└── index.html          # Entry point
+│   ├── components/     # React components
+│   │   ├── Hero/      # Hero section component
+│   │   ├── Navbar/    # Navigation component
+│   │   ├── Services/  # Services section with cards
+│   │   ├── Skills/    # Skills showcase section
+│   │   └── Footer/    # Footer component
+│   ├── context/       # React context providers
+│   │   ├── ThemeContext    # Dark/Light mode management
+│   │   └── LanguageContext # Internationalization
+│   ├── image/         # Image assets
+│   └── translations.ts # Language translations
+├── docs/              # GitHub Pages deployment files
+├── public/           # Static files
+└── index.html        # Entry point
 ```
+
+## 🎨 Design Features
+
+- **Responsive Design**: Adapts seamlessly to all screen sizes
+- **Theme Support**: Elegant dark and light mode implementations
+- **Animations**:
+  - Smooth page transitions
+  - Interactive hover effects
+  - Staggered menu animations
+  - Card flip animations
+- **Accessibility**: Keyboard navigation and ARIA attributes
+- **Performance**: Optimized assets and lazy loading
 
 ## 🌐 Deployment
 
@@ -84,4 +114,12 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 📧 Contact
 
-Steven Taris - [GitHub](https://github.com/Taris87)
+Steven Cleveland - [GitHub](https://github.com/Taris87)
+
+## 🔄 Recent Updates
+
+- Added interactive mobile menu with animation effects
+- Implemented section visit tracking
+- Enhanced card designs with glass morphism
+- Improved responsive layout and typography
+- Added comprehensive documentation

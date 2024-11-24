@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, Moon, Sun, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "../context/LanguageContext";
@@ -6,20 +6,68 @@ import { useLanguage } from "../context/LanguageContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [visitedSections, setVisitedSections] = useState<Set<string>>(new Set());
+  const menuRef = useRef<HTMLDivElement>(null);
   const { theme, setTheme } = useTheme();
   const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     setMounted(true);
+    // Load visited sections from localStorage
+    const savedSections = localStorage.getItem('visitedSections');
+    if (savedSections) {
+      setVisitedSections(new Set(JSON.parse(savedSections)));
+    }
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
 
+  const handleNavClick = (section: string) => {
+    setIsOpen(false);
+    const newVisitedSections = new Set(visitedSections).add(section);
+    setVisitedSections(newVisitedSections);
+    localStorage.setItem('visitedSections', JSON.stringify(Array.from(newVisitedSections)));
+  };
+
   if (!mounted) {
     return null;
   }
+
+  const getLinkClassName = (section: string) => `
+    block px-4 py-2 
+    ${visitedSections.has(section) 
+      ? 'text-gray-500 dark:text-gray-400' 
+      : 'text-gray-700 dark:text-gray-300'
+    }
+    hover:text-primary dark:hover:text-primary 
+    rounded-xl 
+    hover:bg-gray-100/80 dark:hover:bg-gray-700/50 
+    transition-all duration-200 
+    animate-scale-up
+    text-center
+    ${visitedSections.has(section) 
+      ? 'bg-gray-50/50 dark:bg-gray-700/30' 
+      : ''
+    }
+  `;
 
   return (
     <nav className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg fixed w-full z-50 transition-colors duration-200">
@@ -38,31 +86,36 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              className={`${visitedSections.has('home') ? 'text-gray-500 dark:text-gray-400' : 'text-gray-700 dark:text-gray-300'} hover:text-primary dark:hover:text-primary`}
+              onClick={() => handleNavClick('home')}
             >
               {t("home")}
             </a>
             <a
               href="#services"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              className={`${visitedSections.has('services') ? 'text-gray-500 dark:text-gray-400' : 'text-gray-700 dark:text-gray-300'} hover:text-primary dark:hover:text-primary`}
+              onClick={() => handleNavClick('services')}
             >
               {t("services")}
             </a>
             <a
               href="#portfolio"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              className={`${visitedSections.has('portfolio') ? 'text-gray-500 dark:text-gray-400' : 'text-gray-700 dark:text-gray-300'} hover:text-primary dark:hover:text-primary`}
+              onClick={() => handleNavClick('portfolio')}
             >
               {t("portfolio")}
             </a>
             <a
               href="#skills"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              className={`${visitedSections.has('skills') ? 'text-gray-500 dark:text-gray-400' : 'text-gray-700 dark:text-gray-300'} hover:text-primary dark:hover:text-primary`}
+              onClick={() => handleNavClick('skills')}
             >
               {t("skills")}
             </a>
             <a
               href="#contact"
-              className="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
+              className={`${visitedSections.has('contact') ? 'text-gray-500 dark:text-gray-400' : 'text-gray-700 dark:text-gray-300'} hover:text-primary dark:hover:text-primary`}
+              onClick={() => handleNavClick('contact')}
             >
               {t("contact")}
             </a>
@@ -128,38 +181,52 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-800">
-            <a
-              href="#home"
-              className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-            >
-              {t("home")}
-            </a>
-            <a
-              href="#services"
-              className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-            >
-              {t("services")}
-            </a>
-            <a
-              href="#portfolio"
-              className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-            >
-              {t("portfolio")}
-            </a>
-            <a
-              href="#skills"
-              className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-            >
-              {t("skills")}
-            </a>
-            <a
-              href="#contact"
-              className="block px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-primary"
-            >
-              {t("contact")}
-            </a>
+        <div className="md:hidden fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm animate-fade-in">
+          <div ref={menuRef} className="absolute right-0 top-16 w-48 mr-4 animate-slide-down">
+            <div className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-md rounded-2xl shadow-lg overflow-hidden">
+              <div className="px-2 py-3 space-y-1">
+                <a
+                  href="#home"
+                  className={getLinkClassName('home')}
+                  onClick={() => handleNavClick('home')}
+                  style={{ animationDelay: '0ms' }}
+                >
+                  {t("home")}
+                </a>
+                <a
+                  href="#services"
+                  className={getLinkClassName('services')}
+                  onClick={() => handleNavClick('services')}
+                  style={{ animationDelay: '50ms' }}
+                >
+                  {t("services")}
+                </a>
+                <a
+                  href="#portfolio"
+                  className={getLinkClassName('portfolio')}
+                  onClick={() => handleNavClick('portfolio')}
+                  style={{ animationDelay: '100ms' }}
+                >
+                  {t("portfolio")}
+                </a>
+                <a
+                  href="#skills"
+                  className={getLinkClassName('skills')}
+                  onClick={() => handleNavClick('skills')}
+                  style={{ animationDelay: '150ms' }}
+                >
+                  {t("skills")}
+                </a>
+                <a
+                  href="#contact"
+                  className={getLinkClassName('contact')}
+                  onClick={() => handleNavClick('contact')}
+                  style={{ animationDelay: '200ms' }}
+                >
+                  {t("contact")}
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       )}

@@ -1,83 +1,125 @@
-# Portfolio Website Documentation
+# Personal Portfolio Website
 
-## Overview
-This documentation covers the implementation details and features of the portfolio website built with React, TypeScript, and Tailwind CSS.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio showcases my projects, skills, and professional experience with a clean and intuitive design.
 
-## Key Components
+## 🌟 Features
 
-### Services Component
-The Services component showcases professional services with interactive card elements:
+- 🎨 Modern and responsive design
+- 🌙 Dark/Light mode support
+- 🌐 Multi-language support (English/German)
+- 📱 Mobile-optimized interface with:
+  - Responsive typography and spacing
+  - Smart mobile navigation with:
+    - Animated menu transitions
+    - Click-outside closing
+    - Visual feedback for visited sections
+  - Optimized animations for mobile devices
+  - Adaptive layout for different screen sizes
+- 💎 Enhanced UI elements:
+  - Glass morphism effects
+  - Smooth animations and transitions
+  - Interactive hover states
+  - Elegant card designs
+- ⚡ Fast loading and optimized performance
+- 🎯 SEO friendly
 
-- **Card Design**:
-  - Elegant gradient backgrounds with glass morphism effect
-  - Smooth hover animations with animated borders
-  - Interactive flip animation for detailed information
-  - Responsive design with dark mode support
+## 🛠️ Built With
 
-#### Implementation Details:
-```tsx
-// Card Background
-backdrop-blur-md bg-gradient-to-br from-white/90 via-white/70 to-white/90
-dark:from-gray-800/90 dark:via-gray-800/70 dark:to-gray-800/90
+- [React](https://reactjs.org/) - Frontend framework
+- [TypeScript](https://www.typescriptlang.org/) - Type safety and better developer experience
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Vite](https://vitejs.dev/) - Next generation frontend tooling
+- [Lucide Icons](https://lucide.dev/) - Beautiful icons
+- [next-themes](https://github.com/pacocoursey/next-themes) - Theme management
+- [i18next](https://www.i18next.com/) - Internationalization framework
 
-// Hover Effects
-hover:shadow-xl hover:shadow-primary/5
-group-hover:before:opacity-100
-group-hover:before:animate-border
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/Taris87/MyPortfolio.git
 ```
 
-### Styling System
-The project uses Tailwind CSS with custom configurations:
+2. Navigate to the project directory
+```bash
+cd MyPortfolio
+```
 
-- **Custom Animations**:
-  - Border animation for interactive elements
-  - Smooth transitions for hover states
+3. Install dependencies
+```bash
+npm install
+```
+
+4. Start the development server
+```bash
+npm run dev
+```
+
+The site will be available at `http://localhost:5173`
+
+### Building for Production
+
+To create a production build:
+```bash
+npm run build
+```
+
+## 📁 Project Structure
+
+```
+MyPortfolio/
+├── src/
+│   ├── components/     # React components
+│   │   ├── Hero/      # Hero section component
+│   │   ├── Navbar/    # Navigation component
+│   │   ├── Services/  # Services section with cards
+│   │   ├── Skills/    # Skills showcase section
+│   │   └── Footer/    # Footer component
+│   ├── context/       # React context providers
+│   │   ├── ThemeContext    # Dark/Light mode management
+│   │   └── LanguageContext # Internationalization
+│   ├── image/         # Image assets
+│   └── translations.ts # Language translations
+├── docs/              # GitHub Pages deployment files
+├── public/           # Static files
+└── index.html        # Entry point
+```
+
+## 🎨 Design Features
+
+- **Responsive Design**: Adapts seamlessly to all screen sizes
+- **Theme Support**: Elegant dark and light mode implementations
+- **Animations**:
+  - Smooth page transitions
+  - Interactive hover effects
+  - Staggered menu animations
   - Card flip animations
+- **Accessibility**: Keyboard navigation and ARIA attributes
+- **Performance**: Optimized assets and lazy loading
 
-- **Color Scheme**:
-  - Primary color with light/dark variants
-  - Gradient combinations for visual depth
-  - Dark mode support throughout the application
+## 🌐 Deployment
 
-### Internationalization
-The website supports multiple languages:
-- English (default)
-- German
+The portfolio is deployed using GitHub Pages and can be accessed at: https://taris87.github.io/MyPortfolio/
 
-Translation keys are managed in `translations.ts` with type safety.
+## 📝 License
 
-## Development Guidelines
+This project is open source and available under the [MIT License](LICENSE).
 
-### Adding New Features
-1. Maintain consistent styling with existing components
-2. Ensure dark mode compatibility
-3. Add appropriate translations for all text content
-4. Test responsiveness across different screen sizes
+## 📧 Contact
 
-### Best Practices
-- Use TypeScript for type safety
-- Follow the established component structure
-- Maintain accessibility standards
-- Keep animations subtle and purposeful
+Steven Cleveland - [GitHub](https://github.com/Taris87)
 
-## Technical Stack
-- React 18+
-- TypeScript
-- Tailwind CSS
-- Vite (Build Tool)
-- i18next (Internationalization)
+## 🔄 Recent Updates
 
-## Project Structure
-```
-src/
-├── components/
-│   ├── Services.tsx
-│   ├── Hero.tsx
-│   ├── Navbar.tsx
-│   └── Footer.tsx
-├── translations/
-│   └── translations.ts
-├── styles/
-│   └── index.css
-└── App.tsx
-```
+- Added interactive mobile menu with animation effects
+- Implemented section visit tracking
+- Enhanced card designs with glass morphism
+- Improved responsive layout and typography
+- Added comprehensive documentation
