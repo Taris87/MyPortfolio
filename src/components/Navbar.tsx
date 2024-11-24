@@ -26,11 +26,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-[#d946ef]">
-              Steven Cleveland{" "}
-              <span className="font-extrabold dark:text-gray-300 text-gray-900">
-                |
-              </span>{" "}
+            <span className="text-base xxs:text-lg xs:text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-[#d946ef]">
+              <span className="hidden sm:inline">Steven Cleveland</span>
+              <span className="hidden xs:inline sm:hidden">S. Cleveland</span>
+              <span className="inline xs:hidden">S.C.</span>
+              <span className="font-extrabold dark:text-gray-300 text-gray-900 mx-1.5">|</span>
               {t("developer")}
             </span>
           </div>
@@ -91,29 +91,37 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="md:hidden flex items-center space-x-1.5 xxs:space-x-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="p-1 xxs:p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-primary" />
+                <Sun className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
               ) : (
-                <Moon className="w-5 h-5 text-primary" />
+                <Moon className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
               )}
             </button>
 
             <button
               onClick={toggleLanguage}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="p-1 xxs:p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle language"
             >
-              <Languages className="w-5 h-5 text-primary" />
+              <Languages className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
             </button>
 
-            <button onClick={() => setIsOpen(!isOpen)} className="text-primary">
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1 xxs:p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? (
+                <X className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+              ) : (
+                <Menu className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+              )}
             </button>
           </div>
         </div>

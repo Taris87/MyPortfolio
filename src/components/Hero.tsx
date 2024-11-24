@@ -43,32 +43,32 @@ const Hero = () => {
 
       {/* Glass Cards Background */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-96 h-96 bg-primary/10 rounded-full filter blur-[100px] -top-20 -left-20 animate-pulse-slow" />
-        <div className="absolute w-96 h-96 bg-violet-600/10 rounded-full filter blur-[100px] -bottom-20 -right-20 animate-pulse-slow" />
+        <div className="absolute w-48 xxs:w-56 xs:w-64 sm:w-96 h-48 xxs:h-56 xs:h-64 sm:h-96 bg-primary/10 rounded-full filter blur-[100px] -top-20 -left-20 animate-pulse-slow" />
+        <div className="absolute w-48 xxs:w-56 xs:w-64 sm:w-96 h-48 xxs:h-56 xs:h-64 sm:h-96 bg-violet-600/10 rounded-full filter blur-[100px] -bottom-20 -right-20 animate-pulse-slow" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4">
         {/* Centered Welcome Heading */}
-        <div className="text-center -mt-4 sm:-mt-8 mb-20 sm:mb-44">
+        <div className="text-center mt-20 xxs:mt-24 sm:mt-28 mb-8 xxs:mb-10 xs:mb-12 sm:mb-20 md:mb-44">
           <div className="relative inline-block">
             {/* Blob Animation */}
             <div className="absolute inset-0 -z-10 flex items-center justify-center w-full">
-              <div className="absolute w-[120%] h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-70"></div>
-              <div className="absolute w-[120%] h-16 sm:h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-70 translate-y-2"></div>
-              <div className="absolute w-[120%] h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-70 -translate-y-2"></div>
+              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-70"></div>
+              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-70 translate-y-2"></div>
+              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-70 -translate-y-2"></div>
             </div>
             
-            <h1 className="text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
+            <h1 className="text-2xl xxs:text-[2.5rem] xs:text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
               {t("welcome")}
             </h1>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <div className="max-w-5xl mx-auto px-2 sm:px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-4 xxs:gap-5 xs:gap-6 sm:gap-8 lg:gap-12">
             {/* Left Side - Profile Image */}
-            <div className="w-full md:w-1/2 flex flex-col items-center">
-              <div className="relative group w-56 h-56 sm:w-72 sm:h-72">
+            <div className="w-full lg:w-1/2 flex flex-col items-center">
+              <div className="relative group w-40 xxs:w-44 xs:w-56 sm:w-72 h-40 xxs:h-44 xs:h-56 sm:h-72">
                 {/* Animated Glow Effect */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-violet-600 to-primary blur-lg opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse-slow"></div>
                 
@@ -86,12 +86,12 @@ const Hero = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex justify-center gap-6 sm:gap-8 mt-6 sm:mt-8">
+              <div className="flex justify-center gap-3 xxs:gap-3.5 xs:gap-6 sm:gap-8 mt-4 sm:mt-8">
                 <a
                   href="https://github.com/Taris87"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
+                  className="group relative flex items-center justify-center w-9 xxs:w-[2.5rem] xs:w-12 xs:h-12 h-9 xxs:h-[2.5rem] rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
                 >
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-violet-600/20 blur opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
                   <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></div>
@@ -101,7 +101,7 @@ const Hero = () => {
                   href="https://www.linkedin.com/in/steven-cleveland-9440a6269"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
+                  className="group relative flex items-center justify-center w-9 xxs:w-[2.5rem] xs:w-12 xs:h-12 h-9 xxs:h-[2.5rem] rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
                 >
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-violet-600/20 blur opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
                   <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></div>
@@ -109,7 +109,7 @@ const Hero = () => {
                 </a>
                 <a
                   href="mailto:steven_cleveland41@yahoo.com"
-                  className="group relative flex items-center justify-center w-12 h-12 rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
+                  className="group relative flex items-center justify-center w-9 xxs:w-[2.5rem] xs:w-12 xs:h-12 h-9 xxs:h-[2.5rem] rounded-full bg-white/10 dark:bg-gray-800/50 backdrop-blur-sm border border-primary/20 hover:border-primary transition-all duration-300"
                 >
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-violet-600/20 blur opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110"></div>
                   <div className="absolute inset-0 rounded-full border-4 border-primary opacity-50 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"></div>
@@ -119,7 +119,7 @@ const Hero = () => {
             </div>
 
             {/* Right Side - Text Content */}
-            <div className="w-full md:w-1/2 mt-8 md:mt-0">
+            <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
               <div className="bg-gray-800/30 dark:bg-gray-800/30 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-1xl relative before:absolute before:inset-0 before:-z-10 before:translate-x-2 before:translate-y-2 before:bg-primary/10 before:rounded-2xl sm:before:rounded-3xl before:blur-lg after:absolute after:inset-0 after:-z-20 after:translate-x-4 after:translate-y-4 after:bg-violet-600/10 after:rounded-2xl sm:after:rounded-3xl after:blur-xl">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-violet-600 mb-4">
                   <span className="mr-2">{t("iam")}</span>
