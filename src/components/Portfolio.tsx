@@ -87,7 +87,7 @@ const Portfolio = () => {
       image: vocabularyImage,
       tags: ["CSS", "HTML", "JavaScript"],
       githubLink: "https://github.com/Taris87/VocabularyTrainer",
-      liveLink: "https://taris87.github.io/VocabularyTrainer/Vokabel-Trainer/",
+      liveLink: "https://taris87.github.io/VocabularyTrainer/",
     },
   ];
 
