@@ -71,7 +71,7 @@ const Portfolio = () => {
       image: ecommerceImage,
       tags: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind", "Three.js", "React", "Node.js"],
       githubLink: "https://github.com/Taris87/casecobra-dev-clone",
-      liveLink: "https://casecobra-dev-clone-git-master-taris87s-projects.vercel.app/",
+      liveLink: "https://casecobra-dev-clone.vercel.app/",
     },
     {
       title: "Vocabulary App",
