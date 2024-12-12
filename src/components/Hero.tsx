@@ -6,6 +6,7 @@ import { useTheme } from "next-themes";
 import { useTypewriter } from "../features/typing/typingAnimation";
 import profileImage from "../image/IMG_20200831_023451_096.jpg";
 
+
 const Hero = () => {
   const { t } = useLanguage();
   const { resolvedTheme } = useTheme();
@@ -141,12 +142,12 @@ const Hero = () => {
             onClick={() => {
               document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-glow"
+            className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-glow animate-pulse"
             aria-label="Scroll to services"
           >
             <div className="relative">
-              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0 animate-scroll-arrow-1" />
-              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0 animate-scroll-arrow-2" />
+              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0  animate-scroll-arrow-1" />
+              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0  animate-scroll-arrow-2" />
             </div>
           </button>
         </div>

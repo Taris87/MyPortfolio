@@ -66,12 +66,20 @@ const Portfolio = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "E-Commerce CaseCobra-Dev-Clone",
       description: t("projectEcommerce"),
       image: ecommerceImage,
-      tags: ["React", "Node.js", "MongoDB", "Express"],
-      githubLink: "https://github.com",
-      liveLink: "https://example.com",
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind", "Three.js", "React", "Node.js"],
+      githubLink: "https://github.com/Taris87/casecobra-dev-clone",
+      liveLink: "https://casecobra-dev-clone-git-master-taris87s-projects.vercel.app/",
+    },
+    {
+      title: "Vocabulary App",
+      description: t("projectVocabulary"),
+      image: vocabularyImage,
+      tags: ["React.js", "TypeScript", "Tailwind", "Firebase"],
+      githubLink: "https://github.com/Taris87/VocabularyTrainer",
+      liveLink: "https://taris87.github.io/VocabularyTrainer/",
     },
     {
       title: "Dashboard App",
@@ -81,14 +89,7 @@ const Portfolio = () => {
       githubLink: "https://github.com",
       liveLink: "https://example.com",
     },
-    {
-      title: "Vocabulary App",
-      description: t("projectVocabulary"),
-      image: vocabularyImage,
-      tags: ["CSS", "HTML", "JavaScript"],
-      githubLink: "https://github.com/Taris87/VocabularyTrainer",
-      liveLink: "https://taris87.github.io/VocabularyTrainer/",
-    },
+    
   ];
 
   return (

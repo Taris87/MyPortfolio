@@ -33,9 +33,9 @@ export const translations = {
     yourMessage: 'Your Message...',
     sendMessage: 'Send Message',
     allRightsReserved: 'All Rights Reserved',
-    projectEcommerce: 'Complete E-Commerce Solution with React, Node.js, and MongoDB',
+    projectEcommerce: 'A complete e-commerce solution with a design configurator for creating personalized iPhone cases.',
     projectDashboard: 'Dynamic Dashboard for Data Visualization and Real-Time Analytics',
-    projectVocabulary: 'Master Your Vocabulary',
+    projectVocabulary: 'A web application for learning and practicing vocabulary.',
   },
   de: {
     home: 'Home',
@@ -71,8 +71,8 @@ export const translations = {
     yourMessage: 'Deine Nachricht...',
     sendMessage: 'Nachricht senden',
     allRightsReserved: 'Alle Rechte vorbehalten',
-    projectEcommerce: 'Vollständige E-Commerce-Lösung mit React, Node.js und MongoDB',
+    projectEcommerce: 'Vollständige E-Commerce-Lösung mit Design-Konfigurator zum erstellen von Personalisiete iPhone Handyhüllen',
     projectDashboard: 'Dynamisches Dashboard für Datenvisualisierung und Echtzeitanalysen',
-    projectVocabulary: 'Meistere deinen Wortschatz',
+    projectVocabulary: 'Eine Web-Anwendung zum Lernen und Üben von Vokabeln.',
   },
 };

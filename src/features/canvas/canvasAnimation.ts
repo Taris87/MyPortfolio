@@ -19,7 +19,7 @@ export class CanvasAnimation {
       y: 0,
       speedX: 0,
       speedY: 0,
-      size: 6,
+      size: 12,
       rotation: 0
     };
 
@@ -106,7 +106,7 @@ export class CanvasAnimation {
       this.trailParticles.push({
         x: this.shootingStar.x,
         y: this.shootingStar.y,
-        size: Math.random() * 2 + 1,
+        size: Math.random() * 3 + 1.5,
         opacity: 0.8,
         hue: 45
       });
@@ -140,7 +140,7 @@ export class CanvasAnimation {
       const startX = -50;
       const startY = Math.random() * (this.canvas.height / 2);
       const angle = Math.random() * Math.PI / 4 + Math.PI / 8;
-      const speed = 15;
+      const speed = 5;
 
       this.shootingStar = {
         active: true,
@@ -148,8 +148,8 @@ export class CanvasAnimation {
         y: startY,
         speedX: Math.cos(angle) * speed,
         speedY: Math.sin(angle) * speed,
-        size: 6,
-        rotation: 0
+        size: 12,
+        rotation: 100
       };
     }
   }
