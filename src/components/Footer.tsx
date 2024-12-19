@@ -88,11 +88,12 @@ const Footer = () => {
           </form>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-400">
+        <div className=" flex mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-400 justify-between flex-row pr-[10%] pl-[10%]">
           <p>
-            &copy; {new Date().getFullYear()} {t("allRightsReserved")}. Steven
-            Cleveland
+            &copy; {new Date().getFullYear()} {t("allRightsReserved")}. 
           </p>
+          
+          <a href="/">Impressum</a>
         </div>
       </div>
     </footer>

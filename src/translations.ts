@@ -36,6 +36,7 @@ export const translations = {
     projectEcommerce: 'A complete e-commerce solution with a design configurator for creating personalized iPhone cases.',
     projectDashboard: 'Dynamic Dashboard for Data Visualization and Real-Time Analytics',
     projectVocabulary: 'A web application for learning and practicing vocabulary.',
+    projectPacman: 'A classic game of Pacman with a modern twist.',
   },
   de: {
     home: 'Home',
@@ -74,5 +75,6 @@ export const translations = {
     projectEcommerce: 'Vollständige E-Commerce-Lösung mit Design-Konfigurator zum erstellen von Personalisiete iPhone Handyhüllen',
     projectDashboard: 'Dynamisches Dashboard für Datenvisualisierung und Echtzeitanalysen',
     projectVocabulary: 'Eine Web-Anwendung zum Lernen und Üben von Vokabeln.',
+    projectPacman: 'Ein klassisches Spiel von Pacman mit modernem Twist.',
   },
 };

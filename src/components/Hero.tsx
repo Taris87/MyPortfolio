@@ -54,9 +54,9 @@ const Hero = () => {
           <div className="relative inline-block">
             {/* Blob Animation */}
             <div className="absolute inset-0 -z-10 flex items-center justify-center w-full">
-              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-70"></div>
-              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-70 translate-y-2"></div>
-              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-70 -translate-y-2"></div>
+              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-20"></div>
+              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-20 translate-y-2"></div>
+              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-20 -translate-y-2"></div>
             </div>
             
             <h1 className="text-2xl xxs:text-[2.5rem] xs:text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
