@@ -88,7 +88,7 @@ const Portfolio = () => {
       title: "iPhone",
       description: t("projectIphone"),
       image:  iphoneImage,
-      tags: ["HTML, CSS"],
+      tags: ["HTML", "CSS"],
       githubLink: "https://github.com/Taris87/iphone_ios",
       liveLink: "https://taris87.github.io/iphone_ios/",
     },
