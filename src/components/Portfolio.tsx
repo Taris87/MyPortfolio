@@ -2,9 +2,9 @@ import React from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import ecommerceImage from "../image/online-sales-2108028_640.jpg";
-import dashboardImage from "../image/ai-generated-8615473_640.png";
 import vocabularyImage from "../image/child-8560775_640.jpg";
 import pacmanImage from "../image/pacman-7024232_640.jpg";
+import iphoneImage from "../image/iphone_animation.png";
 
 const ProjectCard = ({
   title,
@@ -85,12 +85,12 @@ const Portfolio = () => {
       liveLink: "https://taris87.github.io/VocabularyTrainer/",
     },
     {
-      title: "Dashboard App",
-      description: t("projectDashboard"),
-      image: dashboardImage,
-      tags: ["TypeScript", "React", "Firebase", "TailwindCSS"],
-      githubLink: "https://github.com",
-      liveLink: "https://example.com",
+      title: "iPhone",
+      description: t("projectIphone"),
+      image:  iphoneImage,
+      tags: ["HTML, CSS"],
+      githubLink: "https://github.com/Taris87/iphone_ios",
+      liveLink: "https://taris87.github.io/iphone_ios/",
     },
     {
       title: "PacMan-OldSchool",

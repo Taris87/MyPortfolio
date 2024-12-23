@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <LanguageProvider>
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
           <Navbar />
