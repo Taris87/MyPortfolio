@@ -4,7 +4,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { CanvasAnimation } from '../features/canvas/canvasAnimation';
 import { useTheme } from "next-themes";
 import { useTypewriter } from "../features/typing/typingAnimation";
-import profileImage from "../image/IMG_20200831_023451_096.jpg";
+import profileImage from "../image/profile_photo_72054651.png";
 
 
 const Hero = () => {

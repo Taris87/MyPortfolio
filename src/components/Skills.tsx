@@ -1,48 +1,77 @@
+'use client';
+
 import React from 'react';
-import { useLanguage } from '../context/LanguageContext';
 
-const SkillBar = ({ skill, level }: { skill: string; level: number }) => (
-  <div className="mb-6">
-    <div className="flex justify-between mb-1">
-      <span className="text-base font-semibold text-gray-700 dark:text-gray-300">{skill}</span>
-      <span className="text-sm text-gray-600 dark:text-gray-400">{level}%</span>
-    </div>
-    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
-      <div 
-        className="bg-indigo-600 dark:bg-indigo-500 h-2.5 rounded-full transition-all duration-500 ease-out"
-        style={{ width: `${level}%` }}
-      ></div>
-    </div>
-  </div>
-);
+const TOOLS = [
+  'JavaScript',
+  'TypeScript',
+  'React',
+  'Node.js',
+  'HTML',
+  'CSS',
+  'SQL/NoSQL/PostgreSQL',
+  'AWS/Cloud',
+  'Python',
+];
 
-const Skills = () => {
-  const { t } = useLanguage();
-  
-  const skills = [
-    { name: "JavaScript/TypeScript", level: 70 },
-    { name: "React/React Native", level: 65 },
-    { name: "Node.js", level: 50 },
-    { name: "HTML/CSS", level: 75 },
-    { name: "SQL/NoSQL/PostgreSQL", level: 65 },
-    { name: "AWS/Cloud", level: 40 }
-  ];
-
+const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('mySkills')}</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">{t('techStack')}</p>
-        </div>
-        <div className="max-w-3xl mx-auto">
-          {skills.map((skill, index) => (
-            <SkillBar key={index} skill={skill.name} level={skill.level} />
-          ))}
+        <h2 className="text-center text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          My Skills
+        </h2>
+        <div
+          style={{
+            overflow: 'hidden',
+            position: 'relative',
+            width: '100%',
+            maxWidth: '80%',
+            margin: '0 auto',
+            height: '64px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              animation: 'smooth-marquee 15s linear infinite',
+              willChange: 'transform',
+            }}
+          >
+            {TOOLS.concat(TOOLS).map((tool, index) => (
+              <div
+                key={index}
+                style={{
+                  flexShrink: 0,
+                  marginRight: '1.5rem',
+                  padding: '0.5rem 1rem',
+                  backgroundColor: '#272f5f',
+                  color: '#7482e6',
+                  borderRadius: '25px',
+                  whiteSpace: 'nowrap',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                }}
+              >
+                {tool}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
+      <style>
+        {`
+          @keyframes smooth-marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+        `}
+      </style>
     </section>
   );
 };
 
-export default Skills;
+export default SkillsSection;

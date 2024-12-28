@@ -37,7 +37,8 @@ export const translations = {
     projectDashboard: 'Dynamic Dashboard for Data Visualization and Real-Time Analytics',
     projectVocabulary: 'A web application for learning and practicing vocabulary.',
     projectPacman: 'A classic game of Pacman with a modern twist.',
-    projectIphone: 'An animated iPhone with various colors'
+    projectIphone: 'An animated iPhone with various colors',
+    projectRechenapp: 'A math app with increasing difficulty'
   },
   de: {
     home: 'Home',
@@ -77,6 +78,7 @@ export const translations = {
     projectDashboard: 'Dynamisches Dashboard für Datenvisualisierung und Echtzeitanalysen',
     projectVocabulary: 'Eine Web-Anwendung zum Lernen und Üben von Vokabeln.',
     projectPacman: 'Ein klassisches Spiel von Pacman mit modernem Twist.',
-    projectIphone: 'Ein animiertes iPhone mit verschiedenen Farben'
+    projectIphone: 'Ein animiertes iPhone mit verschiedenen Farben',
+    projectRechenapp: 'Eine Rechen App mit steigernde Schwierigkeit'
   },
 };

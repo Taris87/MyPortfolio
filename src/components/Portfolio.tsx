@@ -5,6 +5,7 @@ import ecommerceImage from "../image/online-sales-2108028_640.jpg";
 import vocabularyImage from "../image/child-8560775_640.jpg";
 import pacmanImage from "../image/pacman-7024232_640.jpg";
 import iphoneImage from "../image/iphone_animation.png";
+import calculatorImage from "../image/rechenapp.jpg";
 
 const ProjectCard = ({
   title,
@@ -98,7 +99,15 @@ const Portfolio = () => {
       image: pacmanImage,
       tags: ["JavaScript", "HTML", "CSS"],
       githubLink: "https://github.com/Taris87/Pac-Man-OldSchool",
-      liveLink: "https://taris87.github.io/Pac-Man-OldSchool",
+      liveLink: "https://taris87.github.io/Pac-Man-OldSchool/",
+    },
+    {
+      title: "Calculator Quiz",
+      description: t("projectRechenapp"),
+      image: calculatorImage,
+      tags: ["JavaScript", "HTML", "CSS"],
+      githubLink: "https://github.com/Taris87/rechnen-app",
+      liveLink: "https://taris87.github.io/rechnen-app/",
     },
     
   ];
