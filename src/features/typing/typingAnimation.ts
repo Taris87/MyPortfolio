@@ -14,6 +14,7 @@ const titles = {
 
 export const useTypewriter = () => {
   const { language } = useLanguage();
+  const oppositeLanguage = language === 'de' ? 'en' : 'de'; 
   const [state, setState] = useState<TypewriterState>({
     displayText: '',
     isDeleting: false,
@@ -22,7 +23,7 @@ export const useTypewriter = () => {
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
-    const currentWord = titles[language][state.currentIndex];
+    const currentWord = titles[oppositeLanguage][state.currentIndex];
 
     const updateText = () => {
       if (!state.isDeleting) {

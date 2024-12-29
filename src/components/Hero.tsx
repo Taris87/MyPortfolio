@@ -50,16 +50,16 @@ const Hero = () => {
 
       <div className="relative z-10 container mx-auto px-4">
         {/* Centered Welcome Heading */}
-        <div className="text-center mt-20 xxs:mt-24 sm:mt-28 mb-8 xxs:mb-10 xs:mb-12 sm:mb-20 md:mb-44">
+        <div className=" text-center mt-20 xxs:mt-14 sm:mt-28 mb-8 xxs:mb-6 xs:mb-10 sm:mb-20 md:mb-40">
           <div className="relative inline-block">
             {/* Blob Animation */}
-            <div className="absolute inset-0 -z-10 flex items-center justify-center w-full">
-              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-20"></div>
-              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-20 translate-y-2"></div>
-              <div className="absolute w-[120%] h-10 xxs:h-11 xs:h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-20 -translate-y-2"></div>
+            <div className="absolute inset-0 -z-10 flex items-center justify-center w-full h-full">
+              <div className="absolute w-[120%] h-16 xxs:h-16 xs:h-16 sm:h-24 -left-[10%] bg-primary/20 dark:bg-primary/30 rounded-full mix-blend-multiply filter blur-xl animate-blob opacity-20"></div>
+              <div className="absolute w-[120%] h-20 xxs:h-20 xs:h-20 sm:h-26 -left-[10%] bg-violet-800/20 dark:bg-violet-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slow opacity-20 translate-y-2"></div>
+              <div className="absolute w-[120%] h-16 xxs:h-20 xs:h-16 sm:h-24 -left-[10%] bg-indigo-800/20 dark:bg-indigo-600/30 rounded-full mix-blend-multiply filter blur-xl animate-blob-slower opacity-20 -translate-y-2"></div>
             </div>
             
-            <h1 className="text-2xl xxs:text-[2.5rem] xs:text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
+            <h1 className="xxs:text-center xxs:leading-tight xs:leading-tight md:leading-snug text-2xl xxs:text-[2.4rem] xs:text-4xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-violet-500 relative">
               {t("welcome")}
             </h1>
           </div>
@@ -122,10 +122,10 @@ const Hero = () => {
             {/* Right Side - Text Content */}
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
               <div className="bg-gray-800/30 dark:bg-gray-800/30 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-1xl relative before:absolute before:inset-0 before:-z-10 before:translate-x-2 before:translate-y-2 before:bg-primary/10 before:rounded-2xl sm:before:rounded-3xl before:blur-lg after:absolute after:inset-0 after:-z-20 after:translate-x-4 after:translate-y-4 after:bg-violet-600/10 after:rounded-2xl sm:after:rounded-3xl after:blur-xl">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-violet-600 mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-[#d946ef]  mb-4">
                   <span className="mr-2">{t("iam")}</span>
                   <div className="min-w-[280px]">
-                    <span className="text-primary dark:text-primary border-r-2 dark:border-primary animate-blink">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-[#d946ef] border-r-2  animate-blink">
                       {displayText}
                     </span>
                   </div>
@@ -142,12 +142,11 @@ const Hero = () => {
             onClick={() => {
               document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-glow animate-pulse"
+            className="relative -bottom-16 left-1/2 transform -translate-x-1/2 cursor-pointer group animate-glow animate-bounce"
             aria-label="Scroll to services"
           >
             <div className="relative">
-              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0  animate-scroll-arrow-1" />
-              <ChevronDown className="w-8 h-8 text-[#d946ef]/70 absolute top-0  animate-scroll-arrow-2" />
+              <ChevronDown className="w-10 h-10 text-[#d946ef]/70 relative top-0" />
             </div>
           </button>
         </div>

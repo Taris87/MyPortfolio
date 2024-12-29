@@ -4,22 +4,24 @@ import { useLanguage } from "../context/LanguageContext";
 
 const Footer = () => {
   const { t } = useLanguage();
-  
+
   // Zustand für die Eingabefelder
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent("Nachricht von " + name);
-    const body = encodeURIComponent(`${message}\n\nAntworten auf Email : ${email}`);
+    const body = encodeURIComponent(
+      `${message}\n\nAntworten auf Email : ${email}`
+    );
     window.location.href = `mailto:steven_cleveland41@yahoo.com?subject=${subject}&body=${body}`;
-    
+
     // Felder zurücksetzen
-    setName('');
-    setEmail('');
-    setMessage('');
+    setName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
@@ -28,31 +30,33 @@ const Footer = () => {
       className="bg-white dark:bg-gray-800 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-              {t("contactMe")}
-            </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              {t("contactText")}
-            </p>
+          <div className="flex flex-col justify-between">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                {t("contactMe")}
+              </h3>
+              <p className=" text-gray-600 dark:text-gray-300 mb-4 mt-8">
+                {t("contactText")}
+              </p>
+            </div>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/Taris87"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-primary transition-colors">
                 <Github className="w-6 h-6" />
               </a>
               <a
                 href="https://www.linkedin.com/in/steven-cleveland-9440a6269"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-primary transition-colors">
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="mailto:steven_cleveland41@yahoo.com"
-                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-primary transition-colors">
                 <Mail className="w-6 h-6" />
               </a>
             </div>
@@ -113,9 +117,9 @@ const Footer = () => {
 
         <div className="flex mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-400 justify-between flex-row pr-[10%] pl-[10%]">
           <p>
-            &copy; {new Date().getFullYear()} {t("allRightsReserved")}. 
+            &copy; {new Date().getFullYear()} {t("allRightsReserved")}.
           </p>
-          
+
           <a href="/">Impressum</a>
         </div>
       </div>

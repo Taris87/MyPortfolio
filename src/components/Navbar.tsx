@@ -74,7 +74,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-base xxs:text-lg xs:text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-[#d946ef]">
+            <span className="text-base xxs:text-xl xs:text-xl sm:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3b81f6] to-[#d946ef] dark:from-primary dark:to-[#d946ef]">
               <span className="hidden sm:inline">Steven Cleveland</span>
               <span className="hidden xs:inline sm:hidden">S. Cleveland</span>
               <span className="inline xs:hidden">S.C.</span>
@@ -83,7 +83,7 @@ const Navbar = () => {
             </span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 text-xl">
             <a
               href="#home"
               className={`${visitedSections.has('home') ? 'text-gray-500 dark:text-gray-400' : 'text-gray-700 dark:text-gray-300'} hover:text-primary dark:hover:text-primary`}
@@ -126,9 +126,9 @@ const Navbar = () => {
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-primary" />
+                <Sun className="w-8 h-8 text-primary" />
               ) : (
-                <Moon className="w-5 h-5 text-primary" />
+                <Moon className="w-8 h-8 text-primary" />
               )}
             </button>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
               className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors flex items-center"
               aria-label="Toggle language"
             >
-              <Languages className="w-5 h-5 mr-1 text-primary" />
+              <Languages className="w-8 h-8 mr-1 text-primary" />
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                 {language.toUpperCase()}
               </span>
@@ -151,9 +151,9 @@ const Navbar = () => {
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <Sun className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+                <Sun className="w-4 xxs:w-[1.6rem] xs:w-[1.6rem] h-4 xxs:h-[1.4rem] xs:h-[1.4rem] text-primary" />
               ) : (
-                <Moon className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+                <Moon className="w-4 xxs:w-[1.6rem] xs:w-[1.6rem] h-4 xxs:h-[1.4rem] xs:h-[1.4rem] text-primary" />
               )}
             </button>
 
@@ -162,7 +162,7 @@ const Navbar = () => {
               className="p-1 xxs:p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle language"
             >
-              <Languages className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+              <Languages className="w-4 xxs:w-[1.6rem] xs:w-[1.6rem] h-4 xxs:h-[1.4rem] xs:h-[1.4rem] text-primary" />
             </button>
 
             <button
@@ -171,9 +171,9 @@ const Navbar = () => {
               aria-label="Toggle menu"
             >
               {isOpen ? (
-                <X className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+                <X className="w-4 xxs:w-[1.6rem] xs:w-[1.6rem] h-4 xxs:h-[1.4rem] xs:h-[1.4rem] text-primary" />
               ) : (
-                <Menu className="w-3.5 xxs:w-[1.1rem] xs:w-4 h-3.5 xxs:h-[1.1rem] xs:h-4 text-primary" />
+                <Menu className="w-4 xxs:w-[1.6rem] xs:w-[1.6rem] h-4 xxs:h-[1.4rem] xs:h-[1.4rem] text-primary" />
               )}
             </button>
           </div>
