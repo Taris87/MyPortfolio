@@ -7,6 +7,7 @@ import { useTypewriter } from "../features/typing/typingAnimation";
 import profileImage from "../image/profile_photo_72054651.png";
 
 
+
 const Hero = () => {
   const { t } = useLanguage();
   const { resolvedTheme } = useTheme();

@@ -33,7 +33,7 @@ export const useTypewriter = () => {
             ...prev,
             displayText: currentWord.slice(0, state.displayText.length + 1)
           }));
-          timeout = setTimeout(updateText, 100); // Typing speed
+          timeout = setTimeout(updateText, 50); // Typing speed
         } else {
           // Wait before starting to delete
           timeout = setTimeout(() => {
@@ -47,7 +47,7 @@ export const useTypewriter = () => {
             ...prev,
             displayText: state.displayText.slice(0, -1)
           }));
-          timeout = setTimeout(updateText, 50); // Deleting speed (faster than typing)
+          timeout = setTimeout(updateText, 25); // Deleting speed (faster than typing)
         } else {
           setState(prev => ({
             ...prev,
@@ -58,9 +58,9 @@ export const useTypewriter = () => {
       }
     };
 
-    timeout = setTimeout(updateText, 100);
+    timeout = setTimeout(updateText, 50);
     return () => clearTimeout(timeout);
-  }, [state.displayText, state.isDeleting, state.currentIndex, language]);
+  }, [state.displayText, state.isDeleting, state.currentIndex, language, oppositeLanguage]);
 
   return {
     displayText: state.displayText,
