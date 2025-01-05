@@ -6,6 +6,7 @@ import vocabularyImage from "../image/child-8560775_640.jpg";
 import pacmanImage from "../image/pacman-7024232_640.jpg";
 import iphoneImage from "../image/iphone_animation.png";
 import calculatorImage from "../image/rechenapp.jpg";
+import learnQuizImage from "../image/quiz-2137664_640.jpg";
 
 const ProjectCard = ({
   title,
@@ -111,6 +112,14 @@ const Portfolio = () => {
       tags: ["JavaScript", "HTML", "CSS"],
       githubLink: "https://github.com/Taris87/rechnen-app",
       liveLink: "https://taris87.github.io/rechnen-app/",
+    },
+    {
+      title: "Lern Quiz",
+      description: t("projectRechenapp"),
+      image: learnQuizImage,
+      tags: ["JavaScript", "HTML", "CSS", "React.js", "TypeScript", "Tailwind"],
+      githubLink: "https://github.com/Taris87/QuizApp",
+      liveLink: "https://taris87.github.io/QuizApp/",
     },
   ];
 

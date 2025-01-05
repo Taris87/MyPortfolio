@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: "/MyPortfolio/",
   build: {
-    outDir: "dist",
+    outDir: "docs",
     assetsDir: "assets",
     rollupOptions: {
       output: {
