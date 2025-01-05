@@ -114,8 +114,8 @@ const Portfolio = () => {
       liveLink: "https://taris87.github.io/rechnen-app/",
     },
     {
-      title: "Lern Quiz",
-      description: t("projectRechenapp"),
+      title: "Quiz App",
+      description: t("projectLearnQuiz"),
       image: learnQuizImage,
       tags: ["JavaScript", "HTML", "CSS", "React.js", "TypeScript", "Tailwind"],
       githubLink: "https://github.com/Taris87/QuizApp",
