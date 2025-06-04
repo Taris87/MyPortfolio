@@ -36,7 +36,7 @@ export const translations = {
     message: "Message",
     yourMessage: "Your Message...",
     sendMessage: "Send Message",
-    allRightsReserved: "All Rights Reserved",
+    allRightsReserved: "Steven Cleveland-MyPortfolio / All Rights Reserved",
     projectEcommerce:
       "A complete e-commerce solution with a design configurator for creating personalized iPhone cases.",
     projectDashboard:
@@ -48,6 +48,7 @@ export const translations = {
     projectRechenapp: "A math app with increasing difficulty",
     projectLearnQuiz:
       "A quiz app with different categories and the possibility to create your own quiz questions",
+    privacyPolicy: "Privacy Policy",
   },
   de: {
     home: "Home",
@@ -87,7 +88,7 @@ export const translations = {
     message: "Nachricht",
     yourMessage: "Deine Nachricht...",
     sendMessage: "Nachricht senden",
-    allRightsReserved: "Alle Rechte vorbehalten",
+    allRightsReserved: "Steven Cleveland-MyPortfolio / Alle Rechte vorbehalten",
     projectEcommerce:
       "Vollständige E-Commerce-Lösung mit Design-Konfigurator zum erstellen von Personalisiete iPhone Handyhüllen",
     projectDashboard:
@@ -98,5 +99,6 @@ export const translations = {
     projectRechenapp: "Eine Rechen App mit steigernde Schwierigkeit",
     projectLearnQuiz:
       "Eine Quiz App mit verschiedenen Kategorien und die möglichkeit eigene Quizfragen zu erstellen",
+    privacyPolicy: "Datenschutzerklärung",
   },
 };

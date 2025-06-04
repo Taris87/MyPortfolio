@@ -120,7 +120,12 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} {t("allRightsReserved")}.
           </p>
 
-          <a href="/">Impressum</a>
+          <a
+            href="/MyPortfolio/datenschutz.html"
+            target="_blank"
+            rel="noopener noreferrer">
+            {t("privacyPolicy")}
+          </a>
         </div>
       </div>
     </footer>
